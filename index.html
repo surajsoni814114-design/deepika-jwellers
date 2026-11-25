@@ -224,6 +224,7 @@
   </footer>
 
   <script>
+    const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTVOFDSHNosZbn3UetbyWSRRXE5riEVVkJr0dfrfqwyR0k1v3cW4MIEHfsr3BFPpiTw4LfwqGWl91Lg/pub?output=csv";
     const STORAGE_KEY = "deepika_jewellers_rates_v1";
 
     const defaults = {
@@ -238,13 +239,7 @@
       return "₹" + Number(num).toLocaleString("en-IN");
     }
 
-    function loadRates() {
-      let data = defaults;
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) data = { ...defaults, ...JSON.parse(saved) };
-      } catch (e) {}
-
+    function applyRatesToUI(data) {
       document.getElementById("r24").textContent = fmt(data.r24);
       document.getElementById("r22").textContent = fmt(data.r22);
       document.getElementById("r18").textContent = fmt(data.r18);
@@ -255,6 +250,57 @@
       document.getElementById("in22").value = data.r22;
       document.getElementById("in18").value = data.r18;
       document.getElementById("insilver").value = data.rsilver;
+    }
+
+    function parseCSV(csvText) {
+      const map = {};
+      const lines = csvText.trim().split(/\r?\n/);
+      for (const line of lines) {
+        if (!line.trim()) continue;
+        const parts = line.split(",");
+        if (parts.length >= 2) {
+          const key = parts[0].replace(/^"|"$/g, "").trim().toLowerCase();
+          const val = Number(parts[1].replace(/^"|"$/g, "").replace(/[₹,\s]/g, "").trim());
+          if (key && !Number.isNaN(val) && val > 0) {
+            map[key] = val;
+          }
+        }
+      }
+      return map;
+    }
+
+    async function loadLiveSheetRates() {
+      try {
+        const res = await fetch(SHEET_CSV_URL + "&t=" + Date.now(), { cache: "no-store" });
+        if (!res.ok) return;
+        const csvText = await res.text();
+        const parsed = parseCSV(csvText);
+
+        if (parsed.r24 && parsed.r22 && parsed.r18 && parsed.rsilver) {
+          const liveData = {
+            r24: parsed.r24,
+            r22: parsed.r22,
+            r18: parsed.r18,
+            rsilver: parsed.rsilver,
+            updated: "लाइव (Google Sheet)"
+          };
+          applyRatesToUI(liveData);
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(liveData));
+          } catch (e) {}
+        }
+      } catch (e) {}
+    }
+
+    function loadRates() {
+      let data = defaults;
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) data = { ...defaults, ...JSON.parse(saved) };
+      } catch (e) {}
+
+      applyRatesToUI(data);
+      loadLiveSheetRates();
     }
 
     function saveRates() {
@@ -288,8 +334,8 @@
         localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
       } catch (e) {}
 
-      loadRates();
-      document.getElementById("statusMsg").textContent = "आज के रेट सेव हो गए!";
+      applyRatesToUI(payload);
+      document.getElementById("statusMsg").textContent = "आज के रेट सेव हो गए! (बाकी ग्राहकों के लिए Google Sheet में भी यही रेट अपडेट रखें)";
     }
 
     function shareWhatsApp() {
