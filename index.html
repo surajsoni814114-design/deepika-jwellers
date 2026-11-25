@@ -25,7 +25,7 @@
       line-height: 1.5;
     }
     header {
-      background: linear-gradient(135deg, #17130d, #2d2214);
+      background: linear-gradient(135deg, #17130d, #2d2315);
       color: #fff;
       padding: 22px 16px;
       text-align: center;
@@ -34,337 +34,285 @@
     .brand {
       font-family: Georgia, serif;
       font-size: 26px;
-      letter-spacing: 1px;
-      color: #f7d58b;
       font-weight: bold;
+      letter-spacing: 1px;
+      color: #f4d078;
     }
     .sub {
       font-size: 13px;
-      color: #e6dcc8;
+      color: #e8dec8;
       margin-top: 4px;
     }
-    main {
-      max-width: 920px;
-      margin: 18px auto;
-      padding: 0 14px 30px;
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px;
     }
-    .meta-bar {
+    .status-box {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 12px;
       padding: 12px 14px;
-      font-size: 13px;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 18px;
-      justify-content: space-between;
       margin-bottom: 18px;
+      font-size: 14px;
     }
-    .meta-bar strong { color: var(--ink); }
-    h2 {
-      font-size: 19px;
-      margin: 22px 0 12px;
-      padding-bottom: 6px;
-      border-bottom: 2px solid var(--line);
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
       color: var(--gold-dark);
+      margin: 18px 0 10px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 6px;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-    .card {
+    .rate-card {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 12px;
-      padding: 14px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     }
-    .card small {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
+    .rate-label {
+      font-size: 15px;
       font-weight: 600;
-    }
-    .rate-val {
-      font-size: 20px;
-      font-weight: 700;
       color: var(--ink);
-      margin-top: 6px;
     }
-    .unit {
-      font-size: 12px;
+    .rate-value {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--accent);
+      margin: 4px 0;
+    }
+    .rate-unit {
+      font-size: 13px;
       color: var(--muted);
-      margin-top: 2px;
     }
-    .panel {
+    .update-box {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 12px;
       padding: 16px;
-      margin-top: 14px;
+      margin-top: 20px;
     }
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+    .field {
+      margin-bottom: 12px;
     }
     label {
       display: block;
       font-size: 13px;
       font-weight: 600;
       margin-bottom: 4px;
-      color: var(--ink);
+      color: var(--muted);
     }
     input {
       width: 100%;
-      padding: 10px;
-      border: 1px solid #cbbd9f;
+      padding: 10px 12px;
+      border: 1px solid #d4c7ae;
       border-radius: 8px;
-      font-size: 15px;
+      font-size: 16px;
       background: #fffdf9;
     }
-    .actions {
+    .btn-row {
       display: flex;
-      flex-wrap: wrap;
       gap: 10px;
-      margin-top: 14px;
+      flex-wrap: wrap;
+      margin-top: 8px;
     }
     button {
-      border: 0;
-      border-radius: 9px;
-      padding: 11px 16px;
-      font-size: 14px;
+      flex: 1;
+      min-width: 140px;
+      padding: 12px 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
     }
-    .btn-save { background: var(--accent); color: #fff; }
-    .btn-reset { background: #e8e0cf; color: var(--ink); }
-    .note {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 10px;
+    .btn-save {
+      background: var(--gold-dark);
+      color: #fff;
     }
-    .info-box {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 14px 16px;
-      margin-top: 14px;
-      font-size: 14px;
+    .btn-wa {
+      background: #1b6b43;
+      color: #fff;
+    }
+    .msg {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
     }
     footer {
       text-align: center;
-      padding: 22px 14px;
       font-size: 13px;
       color: var(--muted);
-    }
-    @media (max-width: 560px) {
-      .grid, .form-grid { grid-template-columns: 1fr; }
-      .rate-val { font-size: 18px; }
+      padding: 24px 16px 32px;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="brand">DEEPIKA JEWELLERS</div>
-    <div class="sub">Deohara, Bihar • शुद्धता और विश्वास का प्रतीक</div>
+    <div class="sub">Main Road, Deohara, Bihar • शुद्धता और विश्वास का प्रतीक</div>
   </header>
 
-  <main>
-    <div class="meta-bar">
-      <div><strong>स्रोत:</strong> <span id="rateSource">IBJA National Benchmark & Store Rate</span></div>
-      <div><strong>अंतिम अपडेट:</strong> <span id="lastUpdated">आज</span></div>
+  <div class="container">
+    <div class="status-box">
+      <div><strong>दुकान दर:</strong> DEEPIKA JEWELLERS Selling Rate</div>
+      <div><strong>अंतिम अपडेट:</strong> <span id="lastUpdated">प्रारंभिक दर</span></div>
     </div>
 
-    <h2>IBJA National Benchmark Rates</h2>
-    <div class="grid">
-      <section class="card">
-        <small>24 कैरेट गोल्ड (999)</small>
-        <div class="rate-val" id="ibja24">₹76,500</div>
-        <div class="unit">प्रति 10 ग्राम (IBJA संदर्भ)</div>
-      </section>
-      <section class="card">
-        <small>22 कैरेट गोल्ड (916)</small>
-        <div class="rate-val" id="ibja22">₹70,100</div>
-        <div class="unit">प्रति 10 ग्राम (IBJA संदर्भ)</div>
-      </section>
-      <section class="card">
-        <small>18 कैरेट गोल्ड (750)</small>
-        <div class="rate-val" id="ibja18">₹57,400</div>
-        <div class="unit">प्रति 10 ग्राम (IBJA संदर्भ)</div>
-      </section>
-      <section class="card">
-        <small>चांदी (999)</small>
-        <div class="rate-val" id="ibjaSilver">₹91,500</div>
-        <div class="unit">प्रति 1 किलोग्राम (IBJA संदर्भ)</div>
-      </section>
+    <div class="section-title">आज के दुकान रेट</div>
+
+    <div class="rate-card">
+      <div class="rate-label">24 कैरेट गोल्ड (999)</div>
+      <div class="rate-value" id="r24">₹76,500</div>
+      <div class="rate-unit">प्रति 10 ग्राम</div>
     </div>
 
-    <h2>दुकान के Selling Rates — सोना (Gold)</h2>
-    <div class="grid">
-      <section class="card">
-        <small>सोना 24 कैरेट (999) — Selling</small>
-        <div class="rate-val" id="sell24">₹77,200</div>
-        <div class="unit">प्रति 10 ग्राम (दुकान विक्रय दर)</div>
-      </section>
-      <section class="card">
-        <small>सोना 22 कैरेट (916) — Selling</small>
-        <div class="rate-val" id="sell22">₹70,800</div>
-        <div class="unit">प्रति 10 ग्राम (दुकान विक्रय दर)</div>
-      </section>
-      <section class="card" style="grid-column: 1 / -1;">
-        <small>सोना 18 कैरेट (750) — Selling</small>
-        <div class="rate-val" id="sell18">₹58,000</div>
-        <div class="unit">प्रति 10 ग्राम (दुकान विक्रय दर)</div>
-      </section>
+    <div class="rate-card">
+      <div class="rate-label">22 कैरेट गोल्ड (916)</div>
+      <div class="rate-value" id="r22">₹70,100</div>
+      <div class="rate-unit">प्रति 10 ग्राम</div>
     </div>
 
-    <h2>दुकान के Selling Rates — चांदी (Silver)</h2>
-    <div class="grid">
-      <section class="card">
-        <small>चांदी (999) — Selling (प्रति 1 किलोग्राम)</small>
-        <div class="rate-val" id="sellSilverKg">₹92,500</div>
-        <div class="unit">प्रति 1 किलोग्राम (दुकान विक्रय दर)</div>
-      </section>
-      <section class="card">
-        <small>चांदी (999) — Selling (प्रति 10 ग्राम)</small>
-        <div class="rate-val" id="sellSilver10g">₹925</div>
-        <div class="unit">प्रति 10 ग्राम (दुकान विक्रय दर)</div>
-      </section>
+    <div class="rate-card">
+      <div class="rate-label">18 कैरेट गोल्ड (750)</div>
+      <div class="rate-value" id="r18">₹57,400</div>
+      <div class="rate-unit">प्रति 10 ग्राम</div>
     </div>
 
-    <h2>रेट अपडेट करें (Rate Update)</h2>
-    <div class="panel">
-      <div class="form-grid">
-        <div>
-          <label for="inIbja24">IBJA 24K (999) / 10g (₹)</label>
-          <input id="inIbja24" type="number" value="76500">
-        </div>
-        <div>
-          <label for="inIbja22">IBJA 22K (916) / 10g (₹)</label>
-          <input id="inIbja22" type="number" value="70100">
-        </div>
-        <div>
-          <label for="inIbja18">IBJA 18K (750) / 10g (₹)</label>
-          <input id="inIbja18" type="number" value="57400">
-        </div>
-        <div>
-          <label for="inIbjaSilver">IBJA चांदी (999) / 1kg (₹)</label>
-          <input id="inIbjaSilver" type="number" value="91500">
-        </div>
-        <div>
-          <label for="inSell24">Selling 24K (999) / 10g (₹)</label>
-          <input id="inSell24" type="number" value="77200">
-        </div>
-        <div>
-          <label for="inSell22">Selling 22K (916) / 10g (₹)</label>
-          <input id="inSell22" type="number" value="70800">
-        </div>
-        <div>
-          <label for="inSell18">Selling 18K (750) / 10g (₹)</label>
-          <input id="inSell18" type="number" value="58000">
-        </div>
-        <div>
-          <label for="inSellSilver">Selling चांदी (999) / 1kg (₹)</label>
-          <input id="inSellSilver" type="number" value="92500">
-        </div>
+    <div class="rate-card">
+      <div class="rate-label">चाँदी (Silver)</div>
+      <div class="rate-value" id="rsilver">₹92,000</div>
+      <div class="rate-unit">प्रति 1 किलोग्राम</div>
+    </div>
+
+    <div class="update-box">
+      <div class="section-title" style="margin-top:0;">दैनिक रेट अपडेट करें</div>
+
+      <div class="field">
+        <label for="in24">24 कैरेट गोल्ड (प्रति 10 ग्राम ₹)</label>
+        <input type="number" id="in24" placeholder="उदाहरण: 78500">
       </div>
-      <div class="actions">
-        <button class="btn-save" onclick="saveRates()">रेट अपडेट करें</button>
-        <button class="btn-reset" onclick="resetRates()">डिफ़ॉल्ट रेट</button>
-      </div>
-      <div class="note">नोट: रेट अपडेट करने पर वे इस ब्राउज़र में अपडेट समय के साथ सेव हो जाते हैं। अंतिम दर के लिए दुकान पर पुष्टि करें।</div>
-    </div>
 
-    <h2>हमारा पता — Deohara, Bihar</h2>
-    <div class="info-box">
-      <strong>DEEPIKA JEWELLERS</strong><br>
-      स्थान: Deohara, Bihar<br>
-      सेवाएं: 24K (999), 22K (916), 18K (750) सोना और 999 चांदी के आभूषण व दैनिक दर जानकारी।
+      <div class="field">
+        <label for="in22">22 कैरेट गोल्ड (प्रति 10 ग्राम ₹)</label>
+        <input type="number" id="in22" placeholder="उदाहरण: 72000">
+      </div>
+
+      <div class="field">
+        <label for="in18">18 कैरेट गोल्ड (प्रति 10 ग्राम ₹)</label>
+        <input type="number" id="in18" placeholder="उदाहरण: 59000">
+      </div>
+
+      <div class="field">
+        <label for="insilver">चाँदी (प्रति 1 किलो ₹)</label>
+        <input type="number" id="insilver" placeholder="उदाहरण: 94000">
+      </div>
+
+      <div class="btn-row">
+        <button class="btn-save" onclick="saveRates()">रेट सेव करें</button>
+        <button class="btn-wa" onclick="shareWhatsApp()">WhatsApp शेयर करें</button>
+      </div>
+      <div class="msg" id="statusMsg"></div>
     </div>
-  </main>
+  </div>
 
   <footer>
-    © DEEPIKA JEWELLERS • Deohara, Bihar
+    DEEPIKA JEWELLERS • Main Road, Deohara, Aurangabad, Bihar • संपर्क: 8252298091
   </footer>
 
   <script>
-    const STORAGE_KEY = 'deepika_jewellers_rates_v1';
-    const DEFAULTS = {
-      ibja24: 76500,
-      ibja22: 70100,
-      ibja18: 57400,
-      ibjaSilver: 91500,
-      sell24: 77200,
-      sell22: 70800,
-      sell18: 58000,
-      sellSilver: 92500,
-      updated: 'प्रारंभिक दर'
+    const STORAGE_KEY = "deepika_jewellers_rates_v1";
+
+    const defaults = {
+      r24: 76500,
+      r22: 70100,
+      r18: 57400,
+      rsilver: 92000,
+      updated: "प्रारंभिक दर"
     };
 
-    const fmtINR = (n) => '₹' + Number(n || 0).toLocaleString('en-IN');
+    function fmt(num) {
+      return "₹" + Number(num).toLocaleString("en-IN");
+    }
 
-    function render(data) {
-      document.getElementById('ibja24').textContent = fmtINR(data.ibja24);
-      document.getElementById('ibja22').textContent = fmtINR(data.ibja22);
-      document.getElementById('ibja18').textContent = fmtINR(data.ibja18);
-      document.getElementById('ibjaSilver').textContent = fmtINR(data.ibjaSilver);
+    function loadRates() {
+      let data = defaults;
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) data = { ...defaults, ...JSON.parse(saved) };
+      } catch (e) {}
 
-      document.getElementById('sell24').textContent = fmtINR(data.sell24);
-      document.getElementById('sell22').textContent = fmtINR(data.sell22);
-      document.getElementById('sell18').textContent = fmtINR(data.sell18);
+      document.getElementById("r24").textContent = fmt(data.r24);
+      document.getElementById("r22").textContent = fmt(data.r22);
+      document.getElementById("r18").textContent = fmt(data.r18);
+      document.getElementById("rsilver").textContent = fmt(data.rsilver);
+      document.getElementById("lastUpdated").textContent = data.updated;
 
-      const sKg = Number(data.sellSilver || 0);
-      document.getElementById('sellSilverKg').textContent = fmtINR(sKg);
-      document.getElementById('sellSilver10g').textContent = fmtINR(Math.round(sKg / 100));
-
-      document.getElementById('lastUpdated').textContent = data.updated || 'आज';
-
-      document.getElementById('inIbja24').value = data.ibja24;
-      document.getElementById('inIbja22').value = data.ibja22;
-      document.getElementById('inIbja18').value = data.ibja18;
-      document.getElementById('inIbjaSilver').value = data.ibjaSilver;
-      document.getElementById('inSell24').value = data.sell24;
-      document.getElementById('inSell22').value = data.sell22;
-      document.getElementById('inSell18').value = data.sell18;
-      document.getElementById('inSellSilver').value = data.sellSilver;
+      document.getElementById("in24").value = data.r24;
+      document.getElementById("in22").value = data.r22;
+      document.getElementById("in18").value = data.r18;
+      document.getElementById("insilver").value = data.rsilver;
     }
 
     function saveRates() {
-      const nowStr = new Date().toLocaleString('hi-IN', {
-        dateStyle: 'medium',
-        timeStyle: 'short'
-      });
-      const data = {
-        ibja24: Number(document.getElementById('inIbja24').value) || DEFAULTS.ibja24,
-        ibja22: Number(document.getElementById('inIbja22').value) || DEFAULTS.ibja22,
-        ibja18: Number(document.getElementById('inIbja18').value) || DEFAULTS.ibja18,
-        ibjaSilver: Number(document.getElementById('inIbjaSilver').value) || DEFAULTS.ibjaSilver,
-        sell24: Number(document.getElementById('inSell24').value) || DEFAULTS.sell24,
-        sell22: Number(document.getElementById('inSell22').value) || DEFAULTS.sell22,
-        sell18: Number(document.getElementById('inSell18').value) || DEFAULTS.sell18,
-        sellSilver: Number(document.getElementById('inSellSilver').value) || DEFAULTS.sellSilver,
-        updated: nowStr
-      };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-      render(data);
-    }
+      const v24 = Number(document.getElementById("in24").value);
+      const v22 = Number(document.getElementById("in22").value);
+      const v18 = Number(document.getElementById("in18").value);
+      const vsil = Number(document.getElementById("insilver").value);
 
-    function resetRates() {
-      localStorage.removeItem(STORAGE_KEY);
-      render(DEFAULTS);
-    }
-
-    (function init() {
-      try {
-        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-        render(saved ? { ...DEFAULTS, ...saved } : DEFAULTS);
-      } catch (e) {
-        render(DEFAULTS);
+      if (!v24 || !v22 || !v18 || !vsil) {
+        document.getElementById("statusMsg").textContent = "कृपया सभी चारों रेट सही से भरें।";
+        return;
       }
-    })();
+
+      const now = new Date().toLocaleString("hi-IN", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+
+      const payload = {
+        r24: v24,
+        r22: v22,
+        r18: v18,
+        rsilver: vsil,
+        updated: now
+      };
+
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      } catch (e) {}
+
+      loadRates();
+      document.getElementById("statusMsg").textContent = "आज के रेट सेव हो गए!";
+    }
+
+    function shareWhatsApp() {
+      const r24 = document.getElementById("r24").textContent;
+      const r22 = document.getElementById("r22").textContent;
+      const r18 = document.getElementById("r18").textContent;
+      const rsil = document.getElementById("rsilver").textContent;
+      const upd = document.getElementById("lastUpdated").textContent;
+
+      const text =
+        `*DEEPIKA JEWELLERS*\n` +
+        `Main Road, Deohara, Bihar\n` +
+        `अपडेट: ${upd}\n\n` +
+        `• 24 कैरेट (999 / 10g): ${r24}\n` +
+        `• 22 कैरेट (916 / 10g): ${r22}\n` +
+        `• 18 कैरेट (750 / 10g): ${r18}\n` +
+        `• चाँदी (1 kg): ${rsil}\n\n` +
+        `संपर्क: 8252298091`;
+
+      window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank");
+    }
+
+    loadRates();
   </script>
 </body>
 </html>
