@@ -1,0 +1,18 @@
+{
+  "name": "DEEPIKA JEWELLERS",
+  "short_name": "Deepika Gold",
+  "description": "DEEPIKA JEWELLERS — Main Road, Deohara, Bihar के आज के गोल्ड और सिल्वर रेट्स",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f3ec",
+  "theme_color": "#17130d",
+  "icons": [
+    {
+      "src": "0144F9CE-AE19-46D9-8A2E-9AD7917FD20B.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
